@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  oliveyoung:
+    container_name: oliveyoung
+    build: .
+    restart: always
+    extra_hosts:
+      - "cmap-was-dev:10.175.7.100"
+      - "cmap-web-dev:10.175.7.99"
+    volumes:
+       - ../target/:/app
+       - ../logs/:/logs
+       - ../file/:/home
+    network_mode: host
+    environment:
+      - TZ=Asia/Seoul
