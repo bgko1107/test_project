@@ -34,7 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/common/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/main/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/analysis/getBookmark").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
