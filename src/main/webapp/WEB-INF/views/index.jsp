@@ -46,6 +46,9 @@
 </head>
 
 <body>
+<div class="alrt_bdy no_ul">
+
+</div>
 </body>
 
 
@@ -55,25 +58,23 @@
 <script type="text/javascript">
 
 
-		var param = {};
-		getAjax("getOliveGrowth", '/main/getOliveGrowth', param, function (id, response) {
-			data.oliveGrowth = response.data;
+	var param = {};
+	getAjax("getOliveGrowth", '/main/getOliveGrowth', param, function (id, response) {
+		data.oliveGrowth = response.data;
 
-			var gubun = 'gubun1';
-			var template = $('#tmp_table_gubun' + gubun).html();
-			var templateScript = Handlebars.compile(template);
-			var context = data;
-			var html = templateScript(context);
-			$(".alrt_bdy.no_ul").html(html);
-			$(".mega_nm").text($(".select.mega option:selected").text());
+		var gubun = 'gubun1';
+		var template = $('#tmp_table_gubun' + gubun).html();
+		var templateScript = Handlebars.compile(template);
+		var context = data;
+		var html = templateScript(context);
+		$(".alrt_bdy.no_ul").html(html);
 
-			$(".table_show").addClass("show");
-			$(".modal1").show();
-		}, fn_error, "POST", "", true);
+	}, fn_error, "POST", "", true);
 
+	function fn_error(){
+
+	}
 </script>
-
-
 
 <script type="text/x-handlebars-template" id="tmp_table_gubun1">
 	<div class="pop_section mb40">
